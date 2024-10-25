@@ -13,12 +13,12 @@ Install the SDK by adding the following dependency in your project's pom.xml fil
 <dependency>
   <groupId>io.github.apimatic</groupId>
   <artifactId>sample-calculator-sdk</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0</version>
 </dependency>
 ```
 
 You can also view the package at:
-https://central.sonatype.com/artifact/io.github.apimatic/sample-calculator-sdk/2.0.0
+https://central.sonatype.com/artifact/io.github.apimatic/sample-calculator-sdk/3.0.0
 
 ## Test the SDK
 
@@ -32,14 +32,14 @@ In Eclipse, for running the tests do the following:
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
 | `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
-| `httpClientConfig` | [`Consumer<HttpClientConfiguration.Builder>`](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-client-configuration-builder.md) | Set up Http Client Configuration instance. |
+| `httpClientConfig` | [`Consumer<HttpClientConfiguration.Builder>`](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-client-configuration-builder.md) | Set up Http Client Configuration instance. |
 
 The API client can be initialized as follows:
 
@@ -53,20 +53,20 @@ APIMATICCalculatorClient client = new APIMATICCalculatorClient.Builder()
 
 ## List of APIs
 
-* [Simple Calculator](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/controllers/simple-calculator.md)
+* [Simple Calculator](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/controllers/simple-calculator.md)
 
 ## Classes Documentation
 
-* [Utility Classes](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/utility-classes.md)
-* [HttpRequest](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-request.md)
-* [HttpResponse](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-response.md)
-* [HttpStringResponse](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-string-response.md)
-* [HttpContext](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-context.md)
-* [HttpBodyRequest](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-body-request.md)
-* [HttpCallback Interface](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-callback-interface.md)
-* [Headers](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/headers.md)
-* [ApiException](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/api-exception.md)
-* [Configuration Interface](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/configuration-interface.md)
-* [HttpClientConfiguration](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-client-configuration.md)
-* [HttpClientConfiguration.Builder](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/2.0.0/doc/http-client-configuration-builder.md)
+* [Utility Classes](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/utility-classes.md)
+* [HttpRequest](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-request.md)
+* [HttpResponse](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-response.md)
+* [HttpStringResponse](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-string-response.md)
+* [HttpContext](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-context.md)
+* [HttpBodyRequest](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-body-request.md)
+* [HttpCallback Interface](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-callback-interface.md)
+* [Headers](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/headers.md)
+* [ApiException](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/api-exception.md)
+* [Configuration Interface](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/configuration-interface.md)
+* [HttpClientConfiguration](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-client-configuration.md)
+* [HttpClientConfiguration.Builder](https://www.github.com/sufyankhanrao/calculator-sdk-java-sdk/tree/3.0.0/doc/http-client-configuration-builder.md)
 
