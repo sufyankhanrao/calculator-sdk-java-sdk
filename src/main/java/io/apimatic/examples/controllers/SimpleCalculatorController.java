@@ -12,7 +12,7 @@ import io.apimatic.examples.ApiHelper;
 import io.apimatic.examples.Server;
 import io.apimatic.examples.exceptions.ApiException;
 import io.apimatic.examples.http.request.HttpMethod;
-import io.apimatic.examples.models.GetCalculateInput;
+import io.apimatic.examples.models.OperationTypeEnum;
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
@@ -32,27 +32,35 @@ public final class SimpleCalculatorController extends BaseController {
 
     /**
      * Calculates the expression using the specified operation.
-     * @param  input  GetCalculateInput object containing request parameters
+     * @param  operation  Required parameter: The operator to apply on the variables
+     * @param  x  Required parameter: The LHS value
+     * @param  y  Required parameter: The RHS value
      * @return    Returns the Double response from the API call
      * @throws    ApiException    Represents error response from the server.
      * @throws    IOException    Signals that an I/O exception of some sort has occurred.
      */
     public Double getCalculate(
-            final GetCalculateInput input) throws ApiException, IOException {
-        return prepareGetCalculateRequest(input).execute();
+            final OperationTypeEnum operation,
+            final double x,
+            final double y) throws ApiException, IOException {
+        return prepareGetCalculateRequest(operation, x, y).execute();
     }
 
     /**
      * Calculates the expression using the specified operation.
-     * @param  input  GetCalculateInput object containing request parameters
+     * @param  operation  Required parameter: The operator to apply on the variables
+     * @param  x  Required parameter: The LHS value
+     * @param  y  Required parameter: The RHS value
      * @return    Returns the Double response from the API call
      */
     public CompletableFuture<Double> getCalculateAsync(
-            final GetCalculateInput input) {
-        try { 
-            return prepareGetCalculateRequest(input).executeAsync(); 
-        } catch (Exception e) {  
-            throw new CompletionException(e); 
+            final OperationTypeEnum operation,
+            final double x,
+            final double y) {
+        try {
+            return prepareGetCalculateRequest(operation, x, y).executeAsync();
+        } catch (Exception e) {
+            throw new CompletionException(e);
         }
     }
 
@@ -60,17 +68,19 @@ public final class SimpleCalculatorController extends BaseController {
      * Builds the ApiCall object for getCalculate.
      */
     private ApiCall<Double, ApiException> prepareGetCalculateRequest(
-            final GetCalculateInput input) throws IOException {
+            final OperationTypeEnum operation,
+            final double x,
+            final double y) {
         return new ApiCall.Builder<Double, ApiException>()
                 .globalConfig(getGlobalConfiguration())
                 .requestBuilder(requestBuilder -> requestBuilder
-                        .server(Server.CALCULATOR.value())
+                        .server(Server.ENUM_DEFAULT.value())
                         .path("/{operation}")
                         .queryParam(param -> param.key("x")
-                                .value(input.getX()).isRequired(false))
+                                .value(x).isRequired(false))
                         .queryParam(param -> param.key("y")
-                                .value(input.getY()).isRequired(false))
-                        .templateParam(param -> param.key("operation").value((input.getOperation() != null) ? input.getOperation().value() : null)
+                                .value(y).isRequired(false))
+                        .templateParam(param -> param.key("operation").value((operation != null) ? operation.value() : null)
                                 .shouldEncode(true))
                         .httpMethod(HttpMethod.GET))
                 .responseHandler(responseHandler -> responseHandler

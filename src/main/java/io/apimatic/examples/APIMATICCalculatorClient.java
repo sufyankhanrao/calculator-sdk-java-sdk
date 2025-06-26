@@ -14,7 +14,6 @@ import io.apimatic.examples.http.client.HttpCallback;
 import io.apimatic.examples.http.client.HttpClientConfiguration;
 import io.apimatic.examples.http.client.ReadonlyHttpClientConfiguration;
 import io.apimatic.okhttpclient.adapter.OkClient;
-import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -128,10 +127,7 @@ public final class APIMATICCalculatorClient implements Configuration {
      * @return Processed base URI
      */
     public String getBaseUri(Server server) {
-        Map<String, SimpleEntry<Object, Boolean>> parameters = new HashMap<>();
-        StringBuilder baseUrl = new StringBuilder(environmentMapper(environment, server));
-        ApiHelper.appendUrlWithTemplateParameters(baseUrl, parameters);
-        return baseUrl.toString();
+        return environmentMapper(environment, server);
     }
 
     /**
@@ -139,7 +135,7 @@ public final class APIMATICCalculatorClient implements Configuration {
      * @return Processed base URI
      */
     public String getBaseUri() {
-        return getBaseUri(Server.CALCULATOR);
+        return getBaseUri(Server.ENUM_DEFAULT);
     }
 
 
@@ -162,7 +158,7 @@ public final class APIMATICCalculatorClient implements Configuration {
      */
     private static String environmentMapper(Environment environment, Server server) {
         if (environment.equals(Environment.PRODUCTION)) {
-            if (server.equals(Server.CALCULATOR)) {
+            if (server.equals(Server.ENUM_DEFAULT)) {
                 return "https://examples.apimatic.io/apps/calculator";
             }
         }

@@ -15,7 +15,9 @@ Calculates the expression using the specified operation.
 
 ```java
 CompletableFuture<Double> getCalculateAsync(
-    final GetCalculateInput input)
+    final OperationTypeEnum operation,
+    final double x,
+    final double y)
 ```
 
 ## Parameters
@@ -33,14 +35,11 @@ CompletableFuture<Double> getCalculateAsync(
 ## Example Usage
 
 ```java
-GetCalculateInput getCalculateInput = new GetCalculateInput.Builder(
-    OperationTypeEnum.MULTIPLY,
-    222.14D,
-    165.14D
-)
-.build();
+OperationTypeEnum operation = OperationTypeEnum.SUM;
+double x = 222.14D;
+double y = 165.14D;
 
-simpleCalculatorController.getCalculateAsync(getCalculateInput).thenAccept(result -> {
+simpleCalculatorController.getCalculateAsync(operation, x, y).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

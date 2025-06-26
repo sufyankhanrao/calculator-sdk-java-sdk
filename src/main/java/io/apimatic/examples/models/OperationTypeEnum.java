@@ -17,24 +17,12 @@ import java.util.TreeMap;
  * OperationTypeEnum to be used.
  */
 public enum OperationTypeEnum {
-    /**
-     * Represents the sum operator
-     */
     SUM,
 
-    /**
-     * Represents the subtract operator
-     */
     SUBTRACT,
 
-    /**
-     * Represents the multiply operator
-     */
     MULTIPLY,
 
-    /**
-     * Represents the divide operator
-     */
     DIVIDE;
 
 

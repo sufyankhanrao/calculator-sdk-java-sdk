@@ -5,8 +5,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
-| `httpClientConfig` | [`Consumer<HttpClientConfiguration.Builder>`](http-client-configuration-builder.md) | Set up Http Client Configuration instance. |
+| httpClientConfig | [`Consumer<HttpClientConfiguration.Builder>`](../doc/http-client-configuration-builder.md) | Set up Http Client Configuration instance. |
 
 The API client can be initialized as follows:
 
@@ -14,7 +13,6 @@ The API client can be initialized as follows:
 APIMATICCalculatorClient client = new APIMATICCalculatorClient.Builder()
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
-    .environment(Environment.PRODUCTION)
     .build();
 ```
 
@@ -35,7 +33,7 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 | `shutdown()` | Shutdown the underlying HttpClient instance. | `void` |
 | `getEnvironment()` | Current API environment. | `Environment` |
 | `getHttpClient()` | The HTTP Client instance to use for making HTTP requests. | `HttpClient` |
-| `getHttpClientConfig()` | Http Client Configuration instance. | [`ReadonlyHttpClientConfiguration`](http-client-configuration.md) |
+| `getHttpClientConfig()` | Http Client Configuration instance. | [`ReadonlyHttpClientConfiguration`](../doc/http-client-configuration.md) |
 | `getBaseUri(Server server)` | Get base URI by current environment | `String` |
 | `getBaseUri()` | Get base URI by current environment | `String` |
 
