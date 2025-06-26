@@ -7,8 +7,8 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.apimatic</groupId>
-  <artifactId>sample-calculator-sdk-new</artifactId>
-  <version>4.0.0</version>
+  <artifactId>sample-calculator-sdk</artifactId>
+  <version>3.0.8</version>
   <packaging>jar</packaging>
   <name>CalculatorSDK</name>
   <description>A Sample Calculator SDK behaving as Rest API client in order to get your simple calculation job done.</description>
@@ -163,7 +163,7 @@
               <publishingServerId>ossrh</publishingServerId>
               <tokenAuth>true</tokenAuth>
               <autoPublish>true</autoPublish>
-              <waitUntil>published</waitUntil>
+              <waitUntil>validated</waitUntil>
             </configuration>
           </plugin>
           <!-- To generate javadoc -->
