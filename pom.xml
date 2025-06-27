@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.apimatic</groupId>
   <artifactId>sample-calculator-sdk</artifactId>
-  <version>3.0.9</version>
+  <version>3.0.10</version>
   <packaging>jar</packaging>
   <name>CalculatorSDK</name>
   <description>A Sample Calculator SDK behaving as Rest API client in order to get your simple calculation job done.</description>
@@ -31,6 +31,12 @@
     <developerConnection>scm:git:ssh://github.com/sufyankhanrao/calculator-sdk-java-sdk.git</developerConnection>
     <url>https://github.com/sufyankhanrao/calculator-sdk-java-sdk</url>
   </scm>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://central.sonatype.com</url>
+    </snapshotRepository>
+  </distributionManagement>
   <dependencies>
     <dependency>
       <groupId>io.apimatic</groupId>
