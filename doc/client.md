@@ -10,10 +10,18 @@ The following parameters are configurable for the API Client:
 The API client can be initialized as follows:
 
 ```java
-APIMATICCalculatorClient client = new APIMATICCalculatorClient.Builder()
-    .httpClientConfig(configBuilder -> configBuilder
-            .timeout(0))
-    .build();
+import io.apimatic.examples.APIMATICCalculatorClient;
+import io.apimatic.examples.exceptions.ApiException;
+
+public class Program {
+    public static void main(String[] args) {
+        APIMATICCalculatorClient client = new APIMATICCalculatorClient.Builder()
+            .httpClientConfig(configBuilder -> configBuilder
+                    .timeout(0))
+            .build();
+
+    }
+}
 ```
 
 ## APIMATIC CalculatorClient Class
